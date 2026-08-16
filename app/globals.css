@@ -1,26 +1,1422 @@
 @import "tailwindcss";
+@import "remixicon/fonts/remixicon.css";
+
+/* =========================================
+   GLOBAL
+========================================= */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --green: #9ae975;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  max-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  max-width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   SECTION 1
+========================================= */
+
+.section1 {
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 6%;
+  gap: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo h1 {
+  font-size: 38px;
+  margin: 0;
+}
+
+.logo i {
+  font-size: 45px;
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
+.part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+nav h4 {
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 0;
+}
+
+nav button {
+  padding: 13px 20px;
+  font-size: 17px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid black;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   SECTION 1 CENTER
+========================================= */
+
+.center {
+  width: 100%;
+  min-height: 65vh;
+  padding: 70px 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.center-part1 {
+  width: 48%;
+}
+
+.center-part1 h1 {
+  position: relative;
+  top: -10px;
+
+  line-height: 1.08;
+  font-size: clamp(42px, 5vw, 65px);
+
+  margin: 0;
+}
+
+.center-part1 p {
+  margin-top: 15px;
+  margin-bottom: 20px;
+
+  width: 95%;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.center-part1 button {
+  background-color: black;
+  color: white;
+
+  border-radius: 10px;
+  border: none;
+
+  padding: 18px 30px;
+
+  font-size: 19px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.center-part2 {
+  position: relative;
+
+  width: 48%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-part2 img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================
+   SECTION 1 BOTTOM LOGOS
+========================================= */
+
+.section1bottom {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 30px 7%;
+
+  gap: 40px;
+
+  margin-top: 5px;
+}
+
+.section1bottom img {
+  height: 65px;
+  width: auto;
+  max-width: 130px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   SECTION 2
+========================================= */
+
+.section2 {
+  max-width: 100%;
+  min-height: 100vh;
+
+  padding: 70px 6%;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   SERVICES TITLE
+========================================= */
+
+.section2 .services {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 35px;
+
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.services h3 {
+  background-color: var(--green);
+
+  font-weight: 500;
+
+  padding: 5px 12px 4px;
+
+  border-radius: 5px;
+
+  font-size: 38px;
+
+  margin: 0;
+
+  white-space: nowrap;
+}
+
+.services p {
+  width: 55%;
+  max-width: 700px;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   CARDS CONTAINER
+========================================= */
+
+.container {
+  width: 100%;
+
+  min-height: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 30px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.elem {
+  flex-shrink: 0;
+
+  width: calc(50% - 15px);
+  min-height: 360px;
+
+  border: 3px solid black;
+
+  border-radius: 35px;
+
+  box-shadow: 0 12px 0 black;
+
+  padding: 45px;
+
+  display: flex;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CARD LEFT PART
+========================================= */
+
+.elem-part1 {
+  height: 100%;
+  width: 55%;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  flex-direction: column;
+}
+
+.elem-part1 h2 {
+  font-size: clamp(28px, 3vw, 42px);
+
+  background-color: var(--green);
+
+  font-weight: 500;
+
+  width: 85%;
+
+  padding: 2px 6px;
+
+  border-radius: 10px;
+
+  margin: 0;
+
+  line-height: 1.1;
+}
+
+.elem-part1 h4 {
+  display: flex;
+
+  align-items: center;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  gap: 15px;
+
+  margin: 0;
+}
+
+.elem-part1 h4 i {
+  padding: 13px;
+
+  background-color: black;
+
+  color: white;
+
+  border-radius: 50%;
+
+  font-weight: 900;
+}
+
+
+/* =========================================
+   CARD RIGHT PART
+========================================= */
+
+.elem-part2 {
+  height: 100%;
+  width: 45%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.elem-part2 img {
+  max-width: 100%;
+  max-height: 220px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   BLACK CARDS
+========================================= */
+
+.black {
+  background-color: black;
+}
+
+.black .elem-part1 h2 {
+  background-color: white;
+}
+
+.black .elem-part1 h4 i {
+  background-color: white;
+  color: black;
+}
+
+
+/* =========================================
+   SECTION 3
+========================================= */
+
+.section3 {
+  width: 100%;
+
+  min-height: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 80px 6%;
+
+  margin-top: 30px;
+}
+
+
+/* =========================================
+   SECTION 3 BOX
+========================================= */
+
+.section3 .cnt {
+  width: 100%;
+
+  min-height: 350px;
+
+  background-color: rgb(212, 207, 207);
+
+  padding: 50px;
+
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   SECTION 3 TEXT
+========================================= */
+
+.section3 .cnt1 {
+  width: 55%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: center;
+}
+
+.section3 .cnt1 h1 {
+  width: 100%;
+
+  font-size: clamp(35px, 4vw, 52px);
+
+  line-height: 1.1;
+
+  margin: 0 0 25px;
+}
+
+.section3 .cnt1 p {
+  width: 90%;
+  max-width: 650px;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  margin: 0 0 30px;
+}
+
+.section3 .cnt1 button {
+  background-color: black;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 17px 28px;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   SECTION 3 IMAGE
+========================================= */
+
+.section3 .cntbottom {
+  width: 40%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.section3 .cntbottom img {
+  width: 100%;
+
+  max-width: 400px;
+
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================
+   SECTION 4
+========================================= */
+
+.section4 {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 80px 6%;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   SECTION 4 TITLE
+========================================= */
+
+.section4 .sm {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin-bottom: 60px;
+}
+
+.section4 .sm .btn {
+  width: auto;
+  flex-shrink: 0;
+}
+
+.section4 .sm .btn h1 {
+  border: 1px solid var(--green);
+
+  background-color: var(--green);
+
+  border-radius: 5px;
+
+  font-size: clamp(32px, 4vw, 55px);
+
+  padding: 5px 12px;
+
+  width: fit-content;
+
+  height: auto;
+
+  margin: 0;
+}
+
+.section4 .sm .para {
+  width: 60%;
+}
+
+.section4 .sm .para p {
+  width: 100%;
+
+  margin: 0;
+
+  font-size: 18px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   SECTION 4 CARDS
+========================================= */
+
+.section4 .cntlast {
+  width: 100%;
+
+  display: flex;
+
+  align-items: stretch;
+
+  justify-content: center;
+
+  margin-top: 0;
+
+  margin-left: 0;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  background-color: black;
+}
+
+.section4 .box1,
+.section4 .box2,
+.section4 .box3 {
+  min-height: 300px;
+
+  width: 33.333%;
+
+  background-color: black;
+
+  color: white;
+
+  padding: 40px;
+
+  border: none;
+
+  border-right: 1px solid white;
+
+  border-radius: 0;
+
+  font-size: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.section4 .box3 {
+  border-right: none;
+}
+
+.section4 .box1 p,
+.section4 .box2 p,
+.section4 .box3 p {
+  margin: 0;
+
+  line-height: 1.6;
+}
+
+.section4 .box1 h4,
+.section4 .box2 h4,
+.section4 .box3 h4 {
+  margin: 30px 0 0;
+
+  color: var(--green);
+
+  font-size: 18px;
+}
+
+.section4 .box1 h4 i,
+.section4 .box2 h4 i,
+.section4 .box3 h4 i {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 10px;
+
+  background-color: var(--green);
+
+  border-radius: 50%;
+
+  width: 35px;
+  height: 35px;
+
+  color: black;
+}
+
+
+/* =========================================
+   END
+========================================= */
+
+.section4 .end {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
+
+  margin-top: 60px;
+
+  margin-bottom: 30px;
+}
+
+.section4 .end .end1 {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: black;
+
+  font-size: 22px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   TABLET
+   1100px
+========================================= */
+
+@media (max-width: 1100px) {
+
+  nav {
+    padding: 40px;
+  }
+
+  .part2 {
+    gap: 20px;
+  }
+
+  nav h4 {
+    font-size: 16px;
+  }
+
+  nav button {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+
+  .center {
+    padding: 50px 40px;
+  }
+
+  .center-part1 h1 {
+    font-size: 48px;
+  }
+
+  .section1bottom {
+    padding: 30px 40px;
+    gap: 25px;
+  }
+
+  .section2 {
+    padding: 50px 40px;
+  }
+
+  .elem {
+    padding: 35px;
+  }
+
+  .elem-part1 h2 {
+    font-size: 32px;
+  }
+
+  .section3 {
+    padding: 60px 40px;
+  }
+
+  .section4 {
+    padding: 60px 40px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+   800px
+========================================= */
+
+@media (max-width: 800px) {
+
+  /* NAV */
+
+  nav {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .logo h1 {
+    font-size: 32px;
+  }
+
+  .logo i {
+    font-size: 38px;
+  }
+
+  .part2 {
+    gap: 12px;
+  }
+
+  nav h4 {
+    font-size: 14px;
+  }
+
+  nav button {
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+
+
+  /* SECTION 1 */
+
+  .center {
+    padding: 40px 30px;
+    gap: 35px;
+  }
+
+  .center-part1 h1 {
+    font-size: 42px;
+  }
+
+  .center-part1 p {
+    font-size: 15px;
+  }
+
+  .center-part1 button {
+    font-size: 17px;
+    padding: 15px 22px;
+  }
+
+  .section1bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 25px 30px;
+    gap: 25px;
+  }
+
+  .section1bottom img {
+    height: 80px;
+    max-width: 200px;
+  }
+
+
+  /* SECTION 2 */
+
+  .section2 {
+    padding: 50px 30px;
+  }
+
+  .section2 .services {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .services h3 {
+    font-size: 32px;
+  }
+
+  .services p {
+    width: 100%;
+    font-size: 17px;
+  }
+
+  .elem {
+    width: 100%;
+  }
+
+
+  /* SECTION 3 */
+
+  .section3 {
+    padding: 50px 30px;
+  }
+
+  .section3 .cnt {
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .section3 .cnt1 h1 {
+    font-size: 38px;
+  }
+
+  .section3 .cnt1 p {
+    font-size: 16px;
+  }
+
+
+  /* SECTION 4 */
+
+  .section4 {
+    padding: 60px 30px;
+  }
+
+  .section4 .sm {
+    gap: 20px;
+  }
+
+  .section4 .sm .para {
+    width: 55%;
+  }
+
+  .section4 .sm .para p {
+    font-size: 16px;
+  }
+
+  .section4 .box1,
+  .section4 .box2,
+  .section4 .box3 {
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   600px
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* -----------------------------------------
+     NAVBAR
+  ----------------------------------------- */
+
+  nav {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  .logo h1 {
+    font-size: 30px;
+  }
+
+  .logo i {
+    font-size: 35px;
+  }
+
+  .part2 {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    overflow: visible;
+  }
+
+  nav h4 {
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  nav button {
+    width: 100%;
+
+    grid-column: 1 / -1;
+
+    font-size: 15px;
+
+    padding: 12px;
+  }
+
+
+  /* -----------------------------------------
+     SECTION 1
+  ----------------------------------------- */
+
+  .center {
+    padding: 40px 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 35px;
+  }
+
+  .center-part1,
+  .center-part2 {
+    width: 100%;
+  }
+
+  .center-part1 h1 {
+    font-size: 38px;
+
+    line-height: 1.08;
+
+    top: 0;
+  }
+
+  .center-part1 p {
+    width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .center-part1 button {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    font-size: 17px;
+  }
+
+  .center-part2 {
+    justify-content: center;
+  }
+
+  .center-part2 img {
+    width: 90%;
+
+    max-width: 350px;
+  }
+
+
+  /* -----------------------------------------
+     LOGOS
+  ----------------------------------------- */
+
+  .section1bottom {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 20px;
+
+    gap: 20px;
+  }
+
+  .section1bottom img {
+    width: 100%;
+
+    height: 45px;
+
+    max-width: 120px;
+
+    margin: auto;
+  }
+
+
+  /* -----------------------------------------
+     SECTION 2
+  ----------------------------------------- */
+
+  .section2 {
+    padding: 50px 20px;
+  }
+
+  .section2 .services {
+    margin-bottom: 35px;
+
+    gap: 15px;
+  }
+
+  .services h3 {
+    font-size: 30px;
+  }
+
+  .services p {
+    width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .container {
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .elem {
+    width: 100%;
+
+    min-height: 360px;
+
+    height: auto;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 8px 0 black;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .elem-part1 {
+    width: 100%;
+
+    min-height: 180px;
+
+    gap: 30px;
+  }
+
+  .elem-part1 h2 {
+    font-size: 28px;
+
+    width: fit-content;
+
+    max-width: 90%;
+  }
+
+  .elem-part1 h4 {
+    font-size: 17px;
+
+    gap: 10px;
+  }
+
+  .elem-part1 h4 i {
+    padding: 10px;
+  }
+
+  .elem-part2 {
+    width: 100%;
+
+    height: 120px;
+  }
+
+  .elem-part2 img {
+    max-width: 120px;
+
+    max-height: 100px;
+  }
+
+
+  /* -----------------------------------------
+     SECTION 3
+  ----------------------------------------- */
+
+  .section3 {
+    padding: 40px 20px;
+
+    margin-top: 20px;
+  }
+
+  .section3 .cnt {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 30px 25px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 35px;
+
+    border-radius: 25px;
+  }
+
+  .section3 .cnt1 {
+    width: 100%;
+  }
+
+  .section3 .cnt1 h1 {
+    font-size: 34px;
+
+    margin-bottom: 20px;
+  }
+
+  .section3 .cnt1 p {
+    width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+  }
+
+  .section3 .cnt1 button {
+    width: 100%;
+
+    font-size: 16px;
+
+    padding: 15px 20px;
+  }
+
+  .section3 .cntbottom {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .section3 .cntbottom img {
+    width: 75%;
+
+    max-width: 300px;
+  }
+
+
+  /* -----------------------------------------
+     SECTION 4 TITLE
+  ----------------------------------------- */
+
+  .section4 {
+    padding: 50px 20px;
+  }
+
+  .section4 .sm {
+    width: 100%;
+
+    padding: 0;
+
+    margin: 0 0 35px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .section4 .sm .btn {
+    width: auto;
+  }
+
+  .section4 .sm .btn h1 {
+    font-size: 30px;
+
+    padding: 5px 10px;
+  }
+
+  .section4 .sm .para {
+    width: 100%;
+  }
+
+  .section4 .sm .para p {
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+
+  /* -----------------------------------------
+     SECTION 4 CARDS
+  ----------------------------------------- */
+
+  .section4 .cntlast {
+    width: 100%;
+
+    margin: 0;
+
+    flex-direction: column;
+
+    border-radius: 20px;
+  }
+
+  .section4 .box1,
+  .section4 .box2,
+  .section4 .box3 {
+    width: 100%;
+
+    min-height: 240px;
+
+    padding: 30px 25px;
+
+    border-right: none;
+
+    border-bottom: 1px solid white;
+
+    font-size: 15px;
+  }
+
+  .section4 .box3 {
+    border-bottom: none;
+  }
+
+  .section4 .box1 p,
+  .section4 .box2 p,
+  .section4 .box3 p {
+    margin: 0;
+
+    line-height: 1.6;
+  }
+
+  .section4 .box1 h4,
+  .section4 .box2 h4,
+  .section4 .box3 h4 {
+    margin: 25px 0 0;
+
+    font-size: 16px;
+  }
+
+  .section4 .box1 h4 i,
+  .section4 .box2 h4 i,
+  .section4 .box3 h4 i {
+    width: 32px;
+
+    height: 32px;
+
+    margin-left: 8px;
+  }
+
+
+  /* -----------------------------------------
+     END
+  ----------------------------------------- */
+
+  .section4 .end {
+    margin-top: 45px;
+
+    margin-bottom: 20px;
+  }
+
+  .section4 .end .end1 {
+    font-size: 18px;
+
+    text-align: center;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   400px
+========================================= */
+
+@media (max-width: 400px) {
+
+  .logo h1 {
+    font-size: 27px;
+  }
+
+  .center-part1 h1 {
+    font-size: 34px;
+  }
+
+  .section1bottom {
+    gap: 15px;
+  }
+
+  .elem {
+    min-height: 340px;
+
+    padding: 22px;
+  }
+
+  .elem-part1 h2 {
+    font-size: 25px;
+  }
+
+  .services h3 {
+    font-size: 27px;
+  }
+
+  .section3 .cnt {
+    padding: 25px 20px;
+  }
+
+  .section3 .cnt1 h1 {
+    font-size: 30px;
+  }
+
+  .section4 .sm .btn h1 {
+    font-size: 27px;
+  }
+
+  .section4 .box1,
+  .section4 .box2,
+  .section4 .box3 {
+    padding: 25px 20px;
+  }
+}
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
 }
