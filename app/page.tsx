@@ -185,26 +185,22 @@ export default function Home() {
 
       <section className="section1">
         <nav className="flex items-center justify-between">
-  {/* Logo - mobile + desktop dono par visible */}
-  <div className="logo flex items-center">
-    <i className="ri-star-s-fill"></i>
-    <h1>WizardZ</h1>
-  </div>
-
-  <div className="part2">
-
-    
-      <nav className="flex items-center justify-between hidden md:flex">
-      <h4>About Us</h4>
-      <h4>Services</h4>
-      <h4>Use Cases</h4>
-      <h4>Pricing</h4>
-      <h4>Blog</h4>
-    </nav>
-
-    <button>Request a quote</button>
-  </div>
-</nav>
+          <div className="logo flex items-center">
+            <i className="ri-star-s-fill"></i>
+            <h1>WizardZ</h1>
+            </div>
+            
+            <div className="part2">
+              <nav className="hidden md:flex items-center justify-between">
+                <h4>About Us</h4>
+                <h4>Services</h4>
+                <h4>Use Cases</h4>
+                <h4>Pricing</h4>
+                <h4>Blog</h4>
+                </nav>
+                <button>Request a quote</button>
+                </div>
+                </nav>
 
         <div className="center">
           <div className="center-part1">
