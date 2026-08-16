@@ -174,23 +174,7 @@ export default function Home() {
       stagger: 0.15,
     });
 
-    const cursor = document.querySelector(".cursor")
-    if (cursor) {
-      const moveCursor = (e: MouseEvent) => {
-        gsap.to(cursor, {
-          x: e.clientX,
-          y: e.clientY,
-          duration: 1,
-          ease: "back.out",
-        });
-      };
-
-      window.addEventListener("mousemove", moveCursor);
-
-      return () => {
-        window.removeEventListener("mousemove", moveCursor);
-      };
-    }
+   
   });
 
   return (
@@ -200,21 +184,27 @@ export default function Home() {
       ========================= */}
 
       <section className="section1">
-        <nav className="hidden md:flex">
-          <div className="logo">
-            <i className="ri-star-s-fill"></i>
-            <h1>WizardZ</h1>
-          </div>
+        <nav className="flex items-center justify-between">
+  {/* Logo - mobile + desktop dono par visible */}
+  <div className="logo flex items-center">
+    <i className="ri-star-s-fill"></i>
+    <h1>WizardZ</h1>
+  </div>
 
-          <div className="part2">
-            <h4>About Us</h4>
-            <h4>Services</h4>
-            <h4>Use Cases</h4>
-            <h4>Pricing</h4>
-            <h4>Blog</h4>
-            <button>Request a quote</button>
-          </div>
-        </nav>
+  <div className="part2">
+
+    
+      <nav className="flex items-center justify-between hidden md:flex">
+      <h4>About Us</h4>
+      <h4>Services</h4>
+      <h4>Use Cases</h4>
+      <h4>Pricing</h4>
+      <h4>Blog</h4>
+    </nav>
+
+    <button>Request a quote</button>
+  </div>
+</nav>
 
         <div className="center">
           <div className="center-part1">
@@ -454,7 +444,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="cursor"></div>
+    
     </>
   );
 }

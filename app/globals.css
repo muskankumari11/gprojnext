@@ -89,7 +89,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 35px;
+  /* gap: 35px; */
+   gap: 40px;
 }
 
 nav h4 {
@@ -1409,14 +1410,5 @@ nav button {
     padding: 25px 20px;
   }
 }
-.cursor {
-  width: 20px;
-  height: 20px;
-  background-color: black;
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 99999;
-}
+
+
