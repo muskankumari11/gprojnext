@@ -191,7 +191,7 @@ export default function Home() {
             </div>
             
             <div className="part2">
-              <nav className="hidden md:flex items-center justify-between">
+              <nav className="items-center justify-between">
                 <h4>About Us</h4>
                 <h4>Services</h4>
                 <h4>Use Cases</h4>
